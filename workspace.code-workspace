@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\serverless-python"
+		},
+		{
+			"path": "..\\trydjango22"
+		}
+	],
+	"settings": {
+		"terminal.integrated.copyOnSelection": true
+	}
+}

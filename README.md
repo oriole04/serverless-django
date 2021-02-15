@@ -1,2 +1,2 @@
 # serverless-django
-Last static website
+ initial using .gitignore
