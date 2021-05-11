@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "..\\trydjango22"
+		},
+		{
+			"path": "..\\serverless-django"
 		}
 	],
 	"settings": {

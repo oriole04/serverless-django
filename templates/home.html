@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{{ title }}
+
+{{ user }}
+{{ request.path }}
+{{ request.user }}
+{{ user.is_authenticated }} 
+<!-- {% if user.is_authenticated %}
+<h2>User Only Data</h1>
+{% endif %} -->
+{% for day in my_list %}
+    <li> {{day}} </li>
+{% endfor %}
+<p>This is the IHM SSPX Website.</p>
+{% endblock %}
