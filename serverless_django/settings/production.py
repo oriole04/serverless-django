@@ -17,6 +17,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+#        'NAME': 'C:/dev/serverless-django/db.sqlite3',
+
     }
 }
 
@@ -33,7 +35,7 @@ DATABASES = {
 STATIC_URL = '/static/'
 # below taken from trydjango22/settings.py
 
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'serverless-django/static_cdn_test')
+LOCAL_STATIC_CDN_PATH = os.path.join(BASE_DIR, 'static_cdn_test')
 
 STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static')     # live cdn AWS S3
 STATICFILES_DIRS = [
