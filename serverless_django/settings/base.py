@@ -15,7 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # may also work
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # may also work
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -77,6 +77,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+#        'NAME': 'C:/dev/serverless-django/db.sqlite3',
+#        [os.path.join(BASE_DIR, '/db.sqlite3')],
+#        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
     }
 }#see the settings directory for database, local, production, local_proxy
 
