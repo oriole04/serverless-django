@@ -11,6 +11,7 @@ pylint = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
 dig = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.6"

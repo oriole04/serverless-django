@@ -1,13 +1,13 @@
 import os
 from .base import *
 from .installed import *
-
+from decouple import config
 ALLOWED_HOSTS= ['windows-s3mqcan','www.ihm-chapel.com']
 DEBUG=False
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY", ')w4^6y$l=c3fk9ag!&t5=__xw1+%+j00c)lfw8gmq+fg3&%2#h')
-
+# SECRET_KEY = os.environ.get("SECRET_KEY", ')w4^6y$l=c3fk9ag!&t5=__xw1+%+j00c)lfw8gmq+fg3&%2#h')
+SECRET_KEY = config('SECRET_KEY')
 print ("Using Production")
 # Database 
 HOME_PAGE_MSG = "Welcome to the Immaculate Heart of Mary Catholic Church, SSPX: "
