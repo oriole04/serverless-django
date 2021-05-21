@@ -6,12 +6,7 @@ ALLOWED_HOSTS= ['windows-s3mqcan','www.ihm-chapel.com']
 DEBUG=False
 
 # SECURITY WARNING: keep the secret key used in production secret!
-<<<<<<< Updated upstream
-SECRET_KEY = os.environ.get("SECRET_KEY", ')w4^6y$l=c3fk9ag!&t5=__xw1+%+j00c)lfw8gmq+fg3&%2#h')
-
-=======
 SECRET_KEY = config('SECRET_KEY')
->>>>>>> Stashed changes
 print ("Using Production")
 
 # Database 
