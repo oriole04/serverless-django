@@ -67,23 +67,30 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'serverless_django.wsgi.application'
-DJANGO_SETTINGS_MODULE = 'serverless_django.settings.production' 
-
 
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+##        'NAME': 'C:/dev/serverless-django/db.sqlite3',
+##        [os.path.join(BASE_DIR, '/db.sqlite3')],
+##        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
+#    }
+#}#see the settings directory for database, local, production, local_proxy
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-#        'NAME': 'C:/dev/serverless-django/db.sqlite3',
-#        [os.path.join(BASE_DIR, '/db.sqlite3')],
-#        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'oriole04$default',
+        'USER': 'oriole04',
+        'PASSWORD': 'Biropa!@#4',
+        'HOST': 'oriole04.mysql.pythonanywhere-services.com',
+        "PORT": 3306,
     }
-}#see the settings directory for database, local, production, local_proxy
-
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
