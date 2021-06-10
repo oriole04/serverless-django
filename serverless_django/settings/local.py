@@ -9,6 +9,7 @@ ALLOWED_HOSTS = ['windows-s3mqcan',
 HOME_PAGE_MSG = "Welcome to the Immaculate Heart of Mary Catholic Church, SSPX: "
 BASIC_INFO_MSG = "Sunday Mass in Latin is at 6:30(Low Mass) and 9:00(High Mass) at the Acadamy, 777 221st Ave. Oak Grove; and Low Mass at 12:30 at the Chapel, 875 Manomen Ave. St. Paul"
 DJANGO_SETTINGS_MODULE = 'serverless_django.settings.local' 
+DB_PASSWORD = config('DB_PASSWORD')
 
 print ("Using Local with STATIC_ROOT='/static/'")
 
@@ -18,9 +19,22 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
 #        'NAME': 'C:/dev/serverless-django/db.sqlite3',
-
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'local',
+#        'USER': 'dblocaluser',
+#        'PASSWORD': 'DB_PASSWORD',
+#        'HOST': 'localhost', #127.0.0.1
+#        "PORT": 3306,
+##        'OPTIONS': {
+##            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+##        }
+#    }
+#}
 # Database 
 #DATABASES = {
 #    'default': {
@@ -48,5 +62,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
 MEDIA_URL = '/media/'       # django storages(setup for AWS instead of local one), etc. 
-print (DJANGO_SETTINGS_MODULE, STATIC_ROOT, BASE_DIR, LOCAL_STATIC_CDN_PATH, STATIC_URL, MEDIA_ROOT, MEDIA_URL)
+print (DB_PASSWORD, DJANGO_SETTINGS_MODULE, STATIC_ROOT, BASE_DIR, LOCAL_STATIC_CDN_PATH, STATIC_URL, MEDIA_ROOT, MEDIA_URL)
 

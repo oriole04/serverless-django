@@ -19,16 +19,16 @@ BASIC_INFO_MSG = "Sunday Mass in Latin is at 6:30(Low Mass) and 9:00(High Mass) 
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
-#        'NAME': 'C:/dev/serverless-django/db.sqlite3',
+##        'NAME': 'C:/dev/serverless-django/db.sqlite3',
 #    }
 #}
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oriole04$default',
+        'NAME': 'oriole04$db1',
         'USER': 'oriole04',
-        'PASSWORD': 'Biropa!@#4',
+        'PASSWORD': 'Biropa!@#4',  #DB_PASSWORD this may need to change!
         'HOST': 'oriole04.mysql.pythonanywhere-services.com',
         "PORT": 3306,
 #        'OPTIONS': {

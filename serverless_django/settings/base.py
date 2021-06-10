@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-
+DB_PASSWORD = config('DB_PASSWORD')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -72,28 +72,29 @@ WSGI_APPLICATION = 'serverless_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-##        'NAME': 'C:/dev/serverless-django/db.sqlite3',
-##        [os.path.join(BASE_DIR, '/db.sqlite3')],
-##        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
-#    }
-#}#see the settings directory for database, local, production, local_proxy
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'oriole04$default',
-        'USER': 'oriole04',
-        'PASSWORD': 'Biropa!@#4',
-        'HOST': 'oriole04.mysql.pythonanywhere-services.com',
-        "PORT": 3306,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+#        'NAME': 'C:/dev/serverless-django/db.sqlite3',
+#        [os.path.join(BASE_DIR, '/db.sqlite3')],
+#        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
     }
+#}#see the settings directory for database, local, production, local_proxy
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'oriole04$default',
+#        'USER': 'oriole04',
+#        'PASSWORD': 'DB_PASSWORD',
+#        'HOST': 'oriole04.mysql.pythonanywhere-services.com',
+#        "PORT": 3306,
+#    }
 }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
