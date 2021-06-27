@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
@@ -21,22 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+project_folder = os.path.expanduser(BASE_DIR)  # adjust as appropriate
+load_dotenv(os.path.join(project_folder, '.env'))
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
-DB_PASSWORD = config('DB_PASSWORD')
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = os.getenv("SECRET_KEY")
+#SECRET_KEY = config('SECRET_KEY')
+#DB_PASSWORD = config('DB_PASSWORD')
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+
 DEBUG = True
-
-# Application definition
-
-#INSTALLED_APPS = [
-#    'django.contrib.admin',
-#    'django.contrib.auth',
-#    'django.contrib.contenttypes',
-#    'django.contrib.sessions',
-#    'django.contrib.messages',
-#    'django.contrib.staticfiles',
-#]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,16 +75,6 @@ DATABASES = {
 #        [os.path.join(BASE_DIR, '/db.sqlite3')],
 #        os.path.join(os.path.dirname(BASE_DIR), 'db.sqlite3'),
     }
-#}#see the settings directory for database, local, production, local_proxy
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'oriole04$default',
-#        'USER': 'oriole04',
-#        'PASSWORD': 'DB_PASSWORD',
-#        'HOST': 'oriole04.mysql.pythonanywhere-services.com',
-#        "PORT": 3306,
-#    }
 }
 
 # Password validation

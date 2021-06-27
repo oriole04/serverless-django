@@ -6,9 +6,6 @@ ALLOWED_HOSTS= ['windows-s3mqcan','www.ihm-chapel.com']
 DEBUG=False
 DJANGO_SETTINGS_MODULE = 'serverless_django.settings.production' 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
-DB_PASSWORD = config('DB_PASSWORD')
 print ("Using Production")
 
 # Database 
@@ -28,12 +25,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'oriole04$db1',
         'USER': 'oriole04',
-        'PASSWORD': 'Biropa!@#4',  #DB_PASSWORD this may need to change!
+        'PASSWORD': DB_PASSWORD,  #DB_PASSWORD this may need to change!
         'HOST': 'oriole04.mysql.pythonanywhere-services.com',
         "PORT": 3306,
-#        'OPTIONS': {
-#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-#        }
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 

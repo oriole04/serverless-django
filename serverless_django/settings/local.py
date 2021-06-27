@@ -9,7 +9,6 @@ ALLOWED_HOSTS = ['windows-s3mqcan',
 HOME_PAGE_MSG = "Welcome to the Immaculate Heart of Mary Catholic Church, SSPX: "
 BASIC_INFO_MSG = "Sunday Mass in Latin is at 6:30(Low Mass) and 9:00(High Mass) at the Acadamy, 777 221st Ave. Oak Grove; and Low Mass at 12:30 at the Chapel, 875 Manomen Ave. St. Paul"
 DJANGO_SETTINGS_MODULE = 'serverless_django.settings.local' 
-DB_PASSWORD = config('DB_PASSWORD')
 
 print ("Using Local with STATIC_ROOT='/static/'")
 
@@ -27,7 +26,7 @@ DATABASES = {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'local',
 #        'USER': 'dblocaluser',
-#        'PASSWORD': 'DB_PASSWORD',
+#        'PASSWORD': DB_PASSWORD,
 #        'HOST': 'localhost', #127.0.0.1
 #        "PORT": 3306,
 ##        'OPTIONS': {
@@ -41,7 +40,7 @@ DATABASES = {
 #        'ENGINE': 'django.db.backends.postgresql',
 #        'NAME': "local",
 #        'USER': "dblocaluser",
-#        "PASSWORD": "biropa04",
+#        "PASSWORD": DB_PASSWORD,
 #        "HOST": '127.0.0.1',
 #        "PORT": 5432,
 #    }

@@ -19,7 +19,7 @@ class BlogPost(models.Model):       #blogpost_set -> query set associated with u
     publish_date    = models.DateTimeField(auto_now=False, auto_now_add=False, null=True, blank=True)
     timestamp       = models.DateTimeField(auto_now_add=True)
     updated         = models.DateTimeField(auto_now=True)
-
+    id              = models.BigAutoField(primary_key=True)
     # objects = BlogPostManager()
     
     class Meta:

@@ -9,7 +9,7 @@ BASIC_INFO_MSG = "Mass for Sunday is at 7:00, 9:00(High Mass) and 11:00"
 
 print ("Using Local Proxy")
 ALLOWED_HOSTS= ['windows-s3mqcan','127.0.0.1', 'localhost']
-DB_PASSWORD = config('DB_PASSWORD')
+
 DJANGO_SETTINGS_MODULE = 'serverless_django.settings.local_proxy' 
 
 # Database 
@@ -37,12 +37,12 @@ DATABASES = {
 #        'NAME': 'BASE_DIR / db_local_proxy',
         'NAME': 'db_local_proxy',
         'USER': 'oriole04',
-        'PASSWORD': 'biropa04',
+        'PASSWORD': DB_PASSWORD,
         'HOST': 'localhost',
         "PORT": 3306,       # 3306
-#        'OPTIONS': {
-#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-#        }
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
