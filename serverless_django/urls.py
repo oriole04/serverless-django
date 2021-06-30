@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 # from pages import views as pages_views
 from pages.views import (example_page, home_page, about_page, contact_page)
-
+from blog.views import ( blog_post_detail_page)
 #urlpatterns = [
 #    path('', home_view),
 #    path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ from pages.views import (example_page, home_page, about_page, contact_page)
 urlpatterns = [
     path('', home_page),
     path('about/', about_page),
+    path('blog/', blog_post_detail_page),
     path('contact/', contact_page),
     path('example/', example_page),
     path('admin/', admin.site.urls),
