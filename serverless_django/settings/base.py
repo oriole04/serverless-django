@@ -33,6 +33,8 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 DEBUG = True
 
+LOGIN_URL = '/login'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

@@ -23,7 +23,7 @@ def contact_page(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
         print(form.cleaned_data)
-        form = ContactForm()
+#        form = ContactForm()    #cleans form out after submitting
     context = {
         "info":"Contact Us, Name, Email, Msg below:", 
         "form": form, 

@@ -1,6 +1,7 @@
 # from django.db.models.query import QuerySet
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
-
+from django.contrib.admin.views.decorators import staff_member_required
 # Create your views here.
 from .forms import BlogPostModelForm
 from .models import BlogPost
@@ -11,6 +12,8 @@ def blog_post_list_view(request):
     context = {'object_list': qs}
     return render(request, template_name, context)
 
+@staff_member_required
+#@login_required
 def blog_post_create_view(request):
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
