@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.template.loader import get_template
 from django.conf import settings
 from django.http import HttpResponse
+from .forms import ContactForm
 # Create your views here.
 #HOME_PAGE_MSG = settings.HOME_PAGE_MSG
 HOME_PAGE_MSG = getattr(settings, "HOME_PAGE_MSG", "Missing Message")
@@ -17,8 +18,19 @@ def home_page(request):
 #    if request.user.is_authenticated:
     context = {"title":HOME_PAGE_MSG, "info": BASIC_INFO_MSG, 'my_list':["Holy Days 2021","May 13", "Nov 01", "Dec 08", "Dec 25"]}
     return render(request, "home.html", context)
+
 def contact_page(request):
-    return render(request, "contact.html", {"title":HOME_PAGE_MSG, "info":"Contact Us"})
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+        form = ContactForm()
+    context = {
+        "info":"Contact Us, Name, Email, Msg below:", 
+        "form": form, 
+        "title":HOME_PAGE_MSG
+    }
+    return render(request, "form.html", context)
+
 def about_page(request):
     return render(request, "about.html", {"title":HOME_PAGE_MSG, "info": BASIC_INFO_MSG})
 def example_page(request):

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if title %}
+    <h1>{{ title }}</h1>
+{% endif %}
+
+<form method='POST' action='.'> {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Send</button>
+</form>
+<p>Pastor: Reverend Father Michael Brown, 320-732-4274; Coordinator: Mr. Michael Burns, 651-578-3013</p>
+{% endblock %}
