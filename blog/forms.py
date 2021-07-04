@@ -9,7 +9,7 @@ class BlogPostForm(forms.Form):
 class BlogPostModelForm(forms.ModelForm):   # defines subset of BlogPost
     class Meta:
         model = BlogPost
-        fields = ['title', 'slug', 'content']
+        fields = ['title', 'slug', 'content', 'description']
 
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')

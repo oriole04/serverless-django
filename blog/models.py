@@ -4,10 +4,11 @@ from django.db import models
 from django.db.models import Q
 from django.utils import timezone
 # Create your models here.  Each definition in the class will be in the database
-
-class BlogPost(models.Model):       #blogpost_set -> query set associated with user
+User = settings.AUTH_USER_MODEL
+class BlogPost(models.Model):       #blogpost_set -> query set associated with user; E.G. j.blogpost_set.all(), see 2.2 # 39
+    
 # id = models.IntegerField()  #pk
-#    user        = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)  #CASCADE eliminates entirety, or use SET_DEFAULT
+    user        = models.ForeignKey(User, default=1, null=True, on_delete=models.SET_NULL)  #CASCADE eliminates entirety, or use SET_DEFAULT
 #    image       = models.ImageField(upload_to='image/', blank=True, null=True)
     title       = models.CharField(max_length=120)
     slug        = models.SlugField(unique=True)   #Hello World -> Hello-World
